@@ -1,0 +1,54 @@
+/* ******************************************** LAYOUT */
+
+:root {
+    --primary: #FFF;
+    --secondary: #F3F7FC;
+    --tertiary: #1E1C2E;
+
+    --primary-font: 'Inter', sans-serif;
+    --secondary-font: 'Mulish', sans-serif;
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 0 !important;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.center-container {
+    margin: 0 auto;
+}
+
+#signup,
+#login {
+    max-width: 552px;
+}
+
+/* ******************************************** FONTS / TEXT */
+
+.secondary-font {
+    font-family: var(--secondary-font) !important;
+}
+
+/* ******************************************** COLORS */
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+
+.bg-tertiary {
+    background-color: var(--tertiary) !important;
+}
+
