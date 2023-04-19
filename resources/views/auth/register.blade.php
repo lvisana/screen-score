@@ -17,31 +17,31 @@
                     <p class="text-secondary">Create your account.</p>
                 </div>
 
-                <form method="POST" action="" class="d-flex flex-column gap-4 mb-3 text-secondary">
+                <form method="POST" action="{{route('profile.save')}}" class="d-flex flex-column gap-4 mb-3 text-secondary">
                     @csrf
                     <div class="form-floating">
-                        <input type="text" class="rounded-4 bg-secondary form-control" id="name" name="name" placeholder="Name">
+                        <input type="text" class="rounded-4 accent-light form-control" id="name" name="name" placeholder="Name" required>
                         <label for="name">First name</label>
                     </div>
 
                     <div class="form-floating">
-                        <input type="text" class="rounded-4 bg-secondary form-control" id="lastname" name="lastname" placeholder="Lastname">
+                        <input type="text" class="rounded-4 accent-light form-control" id="lastname" name="lastname" placeholder="Lastname" required>
                         <label for="lastname">Last name</label>
                     </div>
 
                     <div class="form-floating">
-                        <input type="email" class="rounded-4 bg-secondary form-control" id="email" name="email" placeholder="Email">
+                        <input type="email" class="rounded-4 accent-light form-control" id="email" name="email" placeholder="Email" required>
                         <label for="email">Email address</label>
                     </div>
 
                     <div class="form-floating">
-                        <input type="password" class="rounded-4 bg-secondary form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="rounded-4 accent-light form-control" id="password" name="password" placeholder="Password" required>
                         <label for="password">Password</label>
                     </div>
 
                     <div class="form-floating">
-                        <input type="password" class="rounded-4 bg-secondary form-control" id="conf-password" name="conf-password" placeholder="Confirm Password">
-                        <label for="conf-password">Password</label>
+                        <input type="password" class="rounded-4 accent-light form-control" id="conf-password" name="conf-password" placeholder="Confirm Password" required>
+                        <label for="conf-password">Confirm Password</label>
                     </div>
 
                     <div class="center-container">

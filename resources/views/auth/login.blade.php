@@ -20,12 +20,12 @@
                 <form method="POST" action="" class="d-flex flex-column gap-4 text-secondary">
                     @csrf
                     <div class="form-floating">
-                        <input type="email" class="rounded-4 bg-secondary form-control" id="email" name="email" placeholder="Email">
+                        <input type="email" class="rounded-4 accent-light form-control" id="email" name="email" placeholder="Email">
                         <label for="email">Email address</label>
                     </div>
 
                     <div class="form-floating">
-                        <input type="password" class="rounded-4 bg-secondary form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="rounded-4 accent-light form-control" id="password" name="password" placeholder="Password">
                         <label for="password">Password</label>
                     </div>
 
