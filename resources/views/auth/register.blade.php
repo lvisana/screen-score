@@ -17,7 +17,7 @@
                     <p class="text-secondary">Create your account.</p>
                 </div>
 
-                <form method="POST" action="{{route('profile.save')}}" class="d-flex flex-column gap-4 mb-3 text-secondary">
+                <form method="POST" action="{{route('register.save')}}" class="d-flex flex-column gap-4 mb-3 text-secondary">
                     @csrf
                     <div class="form-floating">
                         <input type="text" class="rounded-4 accent-light form-control" id="name" name="name" placeholder="Name" required>
@@ -25,8 +25,8 @@
                     </div>
 
                     <div class="form-floating">
-                        <input type="text" class="rounded-4 accent-light form-control" id="lastname" name="lastname" placeholder="Lastname" required>
-                        <label for="lastname">Last name</label>
+                        <input type="text" class="rounded-4 accent-light form-control" id="surname" name="surname" placeholder="Surname" required>
+                        <label for="lastname">Surname</label>
                     </div>
 
                     <div class="form-floating">
@@ -55,3 +55,5 @@
         </section>
     </main>
 @endsection
+
+{{-- $errors->get('password_confirmation') --}}

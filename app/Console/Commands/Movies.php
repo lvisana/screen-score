@@ -11,7 +11,7 @@ class Movies extends Command
      *
      * @var string
      */
-    protected $signature = 'movies {lot?} {--lot=100}';
+    protected $signature = 'movies {lot=100}';
 
     /**
      * The console command description.
@@ -29,16 +29,18 @@ class Movies extends Command
         $lot = $this->argument('lot');
 
         if ((int)$lot) {
-            $sync = MovieController::sync($lot);
+            $syncGenres = MovieController::syncGenres();
+            $syncMovies = MovieController::syncMovies($lot);
+            $syncReviews = MovieController::syncReviews();
 
-            if ($sync) {
-                $this->line($lot.' Movies synchronized in database.');
+            if ($syncMovies || $syncGenres || $syncReviews) {
+                $this->line('Data synchronized succesfully');
             } else {
-                $this->line('An error occurred');
+                $this->line('An error occurred.');
             }
 
         } else {
-            $this->error($lot.' is not a number.');
+            $this->error('"'.$lot.'" is not a number.');
         }
     }
 }

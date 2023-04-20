@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +14,9 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-Route::middleware('auth')->group(function () {
-
-
-    // Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', [LoginController::class, 'login'])->name('login');
     
-    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
+    Route::get('/register', [RegisterController::class, 'register'])->name('register');
+    Route::post('/register/save', [RegisterController::class, 'save'])->name('register.save');
 });
-
