@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Http;
 use App\Models\Movie;
 
 class MovieController extends Controller
 {
-    public function sync($lot)
+    public static function sync($lot)
     {
         // $poster_path = 'http://image.tmdb.org/t/p/w500/your_poster_path';
         $api_key = 'be5fbc890d6dde31ba77480f1e1b9b52';
@@ -40,18 +40,15 @@ class MovieController extends Controller
                     }
 
                     $movie = new Movie();
-                    $movie->id = $id;
                     $movie->title = $title;
                     $movie->poster = $poster;
-                    $movie->review_ids = $review_ids;
-                    $movie->genre_ids = $genre_ids;
-
+                    $movie->review_ids = implode(' ', $review_ids);
+                    $movie->genre_ids = implode(' ', $genre_ids);
+    
                     $movie->save();
-
-                    return true;
                 }
-            } else {
-                return false;
+
+                // return true;
             }
         } 
 

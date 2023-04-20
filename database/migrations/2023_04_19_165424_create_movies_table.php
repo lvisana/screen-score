@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('poster')->nullable();
-            $table->string('genre_ids')->nullable();
-            $table->string('reviews_ids')->nullable();
+            $table->text('genre_ids')->nullable();
+            $table->text('review_ids')->nullable();
             $table->timestamps();
         });
     }

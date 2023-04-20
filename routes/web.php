@@ -16,8 +16,6 @@ use App\Http\Controllers\MovieController;
 |
 */
 
-Route::get('/movies/sync/{lot?}', [MovieController::class, 'sync'])->name('movies.sync');
-
 Route::get('/login', [ProfileController::class, 'login'])->name('login');
 Route::get('/register', [ProfileController::class, 'register'])->name('register');
 
