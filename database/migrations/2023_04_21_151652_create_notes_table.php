@@ -11,10 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movie_review', function (Blueprint $table) {
+        Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->integer('movie_id')->unsigned();
-            $table->string('review_id');
+            $table->integer('user_id');
+            $table->integer('movie_id');
+            $table->string('title', '80');
+            $table->string('content', '550');
+            $table->integer('score_id');
+            $table->timestamps();
         });
     }
 
@@ -23,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('movie_review');
+        Schema::dropIfExists('notes');
     }
 };

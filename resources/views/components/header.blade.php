@@ -18,27 +18,70 @@
               </a>
             </div>
 
-            <div class='offcanvas-body text-uppercase fs-7 fw-semibold p-lg-0'>
+            <div class='offcanvas-body p-lg-0'>
               <ul class='navbar-nav align-items-center gap-2'>
 
-                <li class='nav-item'>
-                  <a class='nav-link py-0' aria-current='page' href='#'>Home</a>
+                <li class='nav-item text-uppercase fw-semibold'>
+                  <a class='nav-link py-0 text-light' aria-current='page' href='{{route('dashboard')}}'>Home</a>
                 </li>
 
-                <li class='nav-item'>
-                  <a class='nav-link p-0' aria-current='page' href='#'>My profile</a>
-                </li>
+                @if (Auth::user())
 
-                <li class='nav-item'>
-                  <a class='nav-link py-0' aria-current='page' href='#'>Settings</a>
-                </li>
+                  <li class='nav-item text-uppercase text-light fw-semibold'>
+                    <a class='nav-link py-0 text-light' aria-current='page' href='{{route('dashboard')}}'>New note</a>
+                  </li>
 
-                <li class='nav-item'>
+                  <hr class="d-lg-none w-100 border-light border-3">
+
+                  <li class='nav-item d-lg-none text-uppercase text-light fw-semibold'>
+                    <a class='nav-link py-0 text-light' aria-current='page' href='{{route('dashboard')}}'>My profile</a>
+                  </li>
+
+
+                  <li class='nav-item d-lg-none text-uppercase text-light fw-semibold'>
+                    <a class='nav-link py-0 text-light' aria-current='page' href='{{route('dashboard')}}'>Settings</a>
+                  </li>
+
+                  <li class='nav-item d-lg-none'>
                     <form action="{{route('logout')}}" class="m-0">
                         @csrf
-                        <button class="bg-transparent border-0 text-uppercase text-light fw-semibold" type="submit">Log out</button>
+                        <button class="bg-transparent text-light text-uppercase fw-semibold border-0" type="submit">Log out</button>
                     </form>
+                  </li>
+
+                  <div class="nav-item px-3 dropdown d-none d-lg-block">
+                    <button class="btn accent-secondary text-light fw-semibold fs-7 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{Auth::user()->name}} @isset (Auth::user()->surname) {{Auth::user()->surname}} @endisset
+                    </button>
+
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">My profile</a></li>
+                      <li><a class="dropdown-item" href="#">Settings</a></li>
+
+                      <li>
+                        <form action="{{route('logout')}}" class="m-0">
+                            @csrf
+                            <button class="dropdown-item bg-transparent fw-semibold border-0" type="submit">Log out</button>
+                        </form>
+                      </li>
+
+                    </ul>
+                  </div>
+
+                @else
+
+                <li class='nav-item text-uppercase text-light fw-semibold'>
+                  <a class='nav-link py-0 text-light' aria-current='page' href='{{route('register')}}'>Sign Up</a>
                 </li>
+
+
+                <li class='nav-item text-uppercase text-light fw-semibold'>
+                  <a class='nav-link py-0 text-light' aria-current='page' href='{{route('login')}}'>Sign In</a>
+                </li>
+                  
+                @endif
+
+                
               </ul>
 
             </div>

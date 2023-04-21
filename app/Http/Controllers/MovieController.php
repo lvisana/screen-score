@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
 use App\Models\Movie;
 use App\Models\Genre;
 use App\Models\Review;
@@ -14,7 +13,6 @@ class MovieController extends Controller
 
     public static function syncMovies($lot)
     {
-        // $poster_path = 'http://image.tmdb.org/t/p/w500/your_poster_path';
 
         if (Movie::count('id') >= 1) {
 

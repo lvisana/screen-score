@@ -4,52 +4,35 @@
     Your Notes
 @endsection
 
-@include('components.header')
-
 @section('content')
 
-    <main>
-        <section class="my-4 container-xl" id="create-note">
-                @include('components.create')
-        </section>
-        
-        <section class="container-xl" id="note-list">
+        <div class="container-xl pt-4 pb-5">
 
-            <div class="bg-primary w-100 shadow-sm py-3 mb-5 rounded-3">
-
-                <div class="px-4">
-                    <h2 class="fw-bold secondary-font fs-4 py-2">My Notes</h2>
-                </div>
-
-                <hr class="w-100">
-
-                <div class="container px-4">
-                    <div class="row gy-4 gx-5 m-0">
-                        @foreach ($notes as $item)
-                            @include('components.post', ['title' => $item['title'], 'description' => $item['description'], 'date' => $item['date']])
-                        @endforeach
+            <section class="my-4" id="create-note">
+                <a class="link-dark link-underline link-underline-opacity-0 bg-primary rounded-4 mb-2 p-4 shadow-sm d-flex align-items-center gap-2" href="@if (Auth::user()) {{route('note.create')}} @else {{route('login')}} @endif">
+                    <i class="fa-solid fa-plus icon-md"></i>
+                    <h1 class="secondary-font fw-semibold fs-6 m-0">New note</h1>
+                </a>
+            </section>
+            
+            <section id="note-list">
+                <div class="bg-primary w-100 shadow-sm py-3 rounded-3">
+                    <div class="px-4">
+                        <h2 class="fw-bold secondary-font fs-4 py-2">My Notes</h2>
                     </div>
-                </div>
-
-                <div class="modal fade" id="modal-1" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="modalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                    <hr class="w-100">
+                    <div class="container px-4 pb-4">
+                        <div class="row gy-4 gx-5 m-0" id="note-list">
+                            @foreach ($notes as $note)
+                                @include('note.post')
+                            @endforeach
                         </div>
                     </div>
+                    
+                    @include('note.single-post')
+            
                 </div>
-                
-            </div>
-        </section>
-    </main>
+            </section>
+
+        </div>
 @endsection

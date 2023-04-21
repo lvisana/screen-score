@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->integer('movie_id')->unsigned();
             $table->integer('genre_id')->unsigned();
-            $table->timestamps();
-
         });
     }
 

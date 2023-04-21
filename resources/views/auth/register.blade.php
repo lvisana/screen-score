@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <main class="d-flex p-5 align-items-center">
+    <div class="h-100  pt-4 pb-5 d-flex align-items-center">
         <section class="container-xl" id="signup">
 
             <div class="bg-primary w-100 shadow-sm rounded-3 py-3 px-4">
@@ -19,17 +19,19 @@
 
                 <form method="POST" action="{{route('register.save')}}" class="d-flex flex-column gap-4 mb-3 text-secondary">
                     @csrf
-                    <div class="form-floating">
-                        <input type="text" class="rounded-4 accent-light form-control" id="name" name="name" placeholder="Name" required>
-                        <label for="name">First name</label>
-                    </div>
-                    @include('components.input-error', ['name' => 'name'])
 
-                    <div class="form-floating">
-                        <input type="text" class="rounded-4 accent-light form-control" id="surname" name="surname" placeholder="Surname" required>
-                        <label for="lastname">Surname</label>
+                    <div class="row m-0 gx-lg-1 gap-4 gap-lg-0">
+                        <div class="form-floating p-0 px-lg-1 col-lg-6">
+                            <input type="text" class="rounded-4 accent-light form-control" id="name" name="name" placeholder="Name" required>
+                            <label for="name">First name</label>
+                        </div>
+                        @include('components.input-error', ['name' => 'name'])
+                        <div class="form-floating p-0 px-lg-1 col-lg-6">
+                            <input type="text" class="rounded-4 accent-light form-control" id="surname" name="surname" placeholder="Surname">
+                            <label for="lastname">Surname</label>
+                        </div>
+                        @include('components.input-error', ['name' => 'surname'])
                     </div>
-                    @include('components.input-error', ['name' => 'surname'])
 
 
                     <div class="form-floating">
@@ -59,7 +61,7 @@
             </div>
             
         </section>
-    </main>
+    </div>
 @endsection
 
 {{-- $errors->get('password_confirmation') --}}

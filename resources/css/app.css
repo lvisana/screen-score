@@ -20,8 +20,8 @@ body {
     margin: 0 !important;
 }
 
-main {
-    min-height: 100vh;
+body, html {
+    height: 100% !important;
 }
 
 .logo {
@@ -92,9 +92,41 @@ header .logo {
     fill: white !important;
 }
 
-@media only screen and (min-width: 992px) {
+.note_poster {
+    width: 80px;
+    height: 100px;
+}
+
+.bg-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.line-max {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.note-content {
+    -webkit-line-clamp: 3; /* number of lines to show */
+            line-clamp: 3; 
+}
+
+.note-title,
+.note-movie-title {
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+}
+
+@media (min-width: 992px) {
     #update input {
         max-width: 50%;
+    }
+
+    #screen-score > div {
+        width: 50%;
     }
   }
 
@@ -138,6 +170,12 @@ header .logo {
     background-color: var(--accent-light);
 }
 
+@media (min-width : 992px) {
+    .bg-transparent {
+      background-color: var(--accent-secondary);
+    }
+  }
+
 
 /* ************************ RESPONSIVE NAVBAR */
 
@@ -164,7 +202,4 @@ header .logo {
     }
   
   }
-  
-  .navbar-nav li a {
-  color: white !important;
-  }
+

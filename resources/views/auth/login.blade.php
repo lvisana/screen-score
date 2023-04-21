@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <main class="d-flex align-items-center">
+    <div class="h-100  pt-4 pb-5 d-flex align-items-center">
         <section class="container-xl" id="login">
 
             <div class="bg-primary w-100 shadow-sm rounded-3 py-3 px-4">
@@ -38,5 +38,5 @@
             </div>
             
         </section>
-    </main>
+    </div>
 @endsection
