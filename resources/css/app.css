@@ -9,6 +9,7 @@
 
     --accent: #AA87F5;
     --accent-light: #f5f0ff;
+    --accent-secondary: #f76937;
     
     --primary-font: 'Inter', sans-serif;
     --secondary-font: 'Mulish', sans-serif;
@@ -26,6 +27,11 @@ main {
 .logo {
     width: 50px;
     height: 50px;
+}
+
+header .logo {
+    width: 65px;
+    height: 65px;
 }
 
 .center-container {
@@ -66,13 +72,13 @@ main {
 }
 
 #note-list .card {
-    border-bottom: 4px solid var(--accent) !important;
+    border-bottom: 4px solid var(--accent-secondary) !important;
     transition: .2s ease-in-out;
     
 }
 
 #note-list .card:hover {
-    background-color: var(--accent) !important;
+    background-color: var(--accent-secondary) !important;
     color: white !important;
 }
 
@@ -80,7 +86,9 @@ main {
     color: white !important;
 }
 
-#note-list .card:hover svg:not(.dropdown-icon) path {
+#note-list .card:hover svg:not(.dropdown-icon) path,
+.fa-xmark path,
+.fa-bars path {
     fill: white !important;
 }
 
@@ -118,6 +126,10 @@ main {
     background-color: var(--tertiary) !important;
 }
 
+.accent-secondary {
+    background-color: var(--accent-secondary);
+}
+
 .accent {
     background-color: var(--accent);
 }
@@ -126,3 +138,33 @@ main {
     background-color: var(--accent-light);
 }
 
+
+/* ************************ RESPONSIVE NAVBAR */
+
+@media (min-width : 992px) {
+    .offcanvas {
+      visibility      : visible;
+      position        : relative;
+      background      : none;
+      border          : none;
+      justify-content : end;
+    }
+  }
+  
+  @media (max-width : 992px) {
+    .offcanvas {
+      width : 250px !important;
+    }
+  
+    .offcanvas-start-lg {
+      top          : 0;
+      left         : 0;
+      border-right : 1px solid rgba(0, 0, 0, .2);
+      transform    : translateX(-100%);
+    }
+  
+  }
+  
+  .navbar-nav li a {
+  color: white !important;
+  }

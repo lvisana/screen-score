@@ -1,6 +1,6 @@
 <div class="col-12 col-12 col-md-6 col-xxl-3">
-    <div type="button" class="card h-100 p-0 bg-secondary rounded-4 shadow-sm border-0">
-            <div class="btn-group bg-transparent p-4 card-header d-flex align-items-center justify-content-end border-0">
+    <div type="button" class="card h-100 p-0 bg-secondary rounded-4 shadow border-0">
+            <div class="btn-group bg-transparent pb-0 pt-4 card-header d-flex align-items-center justify-content-end border-0">
                 
                 <button type="button" class="bg-transparent border-0" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" class="">
                     <i class="fa-solid fa-ellipsis icon-md"></i>
@@ -23,7 +23,7 @@
 
             </div>
 
-            <div class="h-100 d-flex flex-column justify-content-between">
+            <div class="h-100 d-flex pt-4 flex-column justify-content-between">
                 <div class="px-4 pb-3" id="card-body" data-bs-toggle="modal" data-bs-target="#modal-1">
                     <h3 class="secondary-font fs-5 mb-3">{{$title ?? $title}}</h3>
                     <p class="text-secondary">{{$description ?? $description}}</p>

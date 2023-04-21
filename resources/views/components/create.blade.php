@@ -13,7 +13,7 @@
                 <div class="p-4"><textarea name="description" id="description" rows="10" class="create-note-input border-0 w-100" placeholder="Description..."></textarea></div>
                 <div class="d-flex align-items-center p-4 align-self-end gap-3">
                     <a class="fw-semibold text-secondary link-underline link-underline-opacity-0" data-bs-toggle="collapse" href="#collapseCreateNote" role="button" aria-expanded="false" aria-controls="collapseCreateNote">Cancel</a>
-                    <input type="submit" class="accent btn text-light fw-semibold" value="Upload note">
+                    <input type="submit" class="accent-secondary btn text-light fw-semibold" value="Upload note">
                 </div>
             </form>
         </div>

@@ -7,14 +7,14 @@
 @section('content')
 
 <main>
-        <section class="my-4 container-xxl">
+        <section class="my-4 container-xl">
             <div class="bg-primary d-flex align-items-center gap-2 shadow-sm rounded-4 p-4">
                 <i class="fa-solid fa-user icon-md"></i>
                 <h1 class="secondary-font fw-semibold fs-6 m-0">Update account</h1>
             </div>
         </section>
         
-        <section class="container-xxl" id="update">
+        <section class="container-xl" id="update">
 
             <div class="bg-primary w-100 shadow-sm py-3 mb-5 rounded-3">
 

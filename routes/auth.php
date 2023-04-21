@@ -16,7 +16,13 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'login'])->name('login');
+    Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
     
     Route::get('/register', [RegisterController::class, 'register'])->name('register');
     Route::post('/register/save', [RegisterController::class, 'save'])->name('register.save');
 });
+
+Route::middleware('auth')->group(function () {
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');    
+});
+

@@ -4,14 +4,16 @@
     Your Notes
 @endsection
 
+@include('components.header')
+
 @section('content')
 
     <main>
-        <section class="my-4 container-xxl" id="create-note">
+        <section class="my-4 container-xl" id="create-note">
                 @include('components.create')
         </section>
         
-        <section class="container-xxl" id="note-list">
+        <section class="container-xl" id="note-list">
 
             <div class="bg-primary w-100 shadow-sm py-3 mb-5 rounded-3">
 
@@ -22,7 +24,7 @@
                 <hr class="w-100">
 
                 <div class="container px-4">
-                    <div class="row g-3 m-0">
+                    <div class="row gy-4 gx-5 m-0">
                         @foreach ($notes as $item)
                             @include('components.post', ['title' => $item['title'], 'description' => $item['description'], 'date' => $item['date']])
                         @endforeach

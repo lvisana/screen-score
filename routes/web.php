@@ -13,12 +13,12 @@ use App\Http\Controllers\DashboardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
 
     // Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
     
-    Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 });
 
