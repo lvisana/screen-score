@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public static $poster_path = 'http://image.tmdb.org/t/p/w500/';
+    public static $poster_path = 'http://image.tmdb.org/t/p/w500';
 
     public function dashboard($id = null)
     {
@@ -16,12 +16,26 @@ class DashboardController extends Controller
 
             $movie = $notes->movie()->first();
 
+            if (\Auth::user()) {
+                $user_id = \Auth::user()->id;
+            }
+
+            if ($notes->created_at >= $notes->updated_at) {
+                $date = $notes->created_at->diffForHumans(null, false, false, 1);
+            } else {
+                $date = $notes->updated_at->diffForHumans(null, false, false, 1);
+            }
+
             return response()->json([
-                'notes' => $notes,
+                'date' => $date,
+                'user' => $notes->user()->first(),
+                'auth' => $notes->user_id == isset($user_id) ?? '',
+                'admin' => isset($user_id) && \Auth::user()->role == 1,
+                'note' => $notes,
                 'movie' => $movie,
                 'genres' => $movie->movieGenres($movie->id)->all(),
                 'reviews' => $movie->movieReviews($movie->id)->all(),
-                'score' => $notes->score($notes->score($notes->id)[0]->name),
+                'score' => $notes->score($notes->id)[0]->name,
             ]);
 
         } else {

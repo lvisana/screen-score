@@ -18,11 +18,10 @@ Route::get('/home/{id?}', [DashboardController::class, 'dashboard'])->name('dash
 
 Route::middleware('auth')->group(function () {
 
-
-    Route::get('/note/create', [NoteController::class, 'create'])->name('note.create');
+    Route::get('/note/create/{edit?}', [NoteController::class, 'create'])->name('note.create');
+    Route::post('/note/update', [NoteController::class, 'update'])->name('note.update');
     Route::post('/note/store', [NoteController::class, 'store'])->name('note.store');
+    Route::get('/note/delete/{id}', [NoteController::class, 'delete'])->name('note.delete');
 
-    // Route::get('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-    
 });
 

@@ -28,19 +28,10 @@
                 @if (Auth::user())
 
                   <li class='nav-item text-uppercase text-light fw-semibold'>
-                    <a class='nav-link py-0 text-light' aria-current='page' href='{{route('dashboard')}}'>New note</a>
+                    <a class='nav-link py-0 text-light' aria-current='page' href='{{route('note.create')}}'>New note</a>
                   </li>
 
                   <hr class="d-lg-none w-100 border-light border-3">
-
-                  <li class='nav-item d-lg-none text-uppercase text-light fw-semibold'>
-                    <a class='nav-link py-0 text-light' aria-current='page' href='{{route('dashboard')}}'>My profile</a>
-                  </li>
-
-
-                  <li class='nav-item d-lg-none text-uppercase text-light fw-semibold'>
-                    <a class='nav-link py-0 text-light' aria-current='page' href='{{route('dashboard')}}'>Settings</a>
-                  </li>
 
                   <li class='nav-item d-lg-none'>
                     <form action="{{route('logout')}}" class="m-0">
@@ -55,9 +46,6 @@
                     </button>
 
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">My profile</a></li>
-                      <li><a class="dropdown-item" href="#">Settings</a></li>
-
                       <li>
                         <form action="{{route('logout')}}" class="m-0">
                             @csrf

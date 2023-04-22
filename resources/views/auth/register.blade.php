@@ -5,7 +5,9 @@
 @endsection
 
 @section('content')
-    <div class="h-100  pt-4 pb-5 d-flex align-items-center">
+<div class="h-100 position-relative">
+    <div class="w-100 center-body">
+
         <section class="container-xl" id="signup">
 
             <div class="bg-primary w-100 shadow-sm rounded-3 py-3 px-4">
@@ -62,6 +64,6 @@
             
         </section>
     </div>
-@endsection
+</div>
 
-{{-- $errors->get('password_confirmation') --}}
+@endsection

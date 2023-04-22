@@ -1,66 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Crazy Imagine - ScreenScore (Notas/Reviews de películas)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Esta es una aplicación web hecha para la prueba de Notas/Reviews de películas hecha por Luisana Mora.
 
-## About Laravel
+Se recomienda lo siguiente para poner en marcha el proyecto:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Subir las migraciones
+2. Correr el comando `php artisan movies`
+3. Loguearse con credenciales de administrador:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+admin123@admin.com
+12345678
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+4. Loguearse como usuario:
 
-## Learning Laravel
+daniel@gmail.com
+12345678
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Table of contents
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- [Descripción general](#descripcion)
+  - [La prueba](#la-prueba)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [El proceso](#el-proceso)
+  - [Elaborado con](#elaborado-con)
+  - [Estructura del proyecto](#estructura)
+  - [Lo que aprendí](#lo-que-aprendí)
+- [Autor](#autor)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Descripcion
 
-## Laravel Sponsors
+### La prueba:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+> Se requiere una aplicación en laravel para la comunidad cinefila de Crazy Imagine Software, la idea es tener una aplicación de creación de notas (cada nota será una critica a una película),  las notas deben tener una calificación mala, buena y excelente… debe contar con sistema de login y registro… las películas se obtendrán de la API pública de The Movie Database
 
-### Premium Partners
+### Screenshot
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+![](./screenshot.png)
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Links
 
-## Code of Conduct
+- En el servidor de Laragon: (http://screen-score.test)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## El proceso
 
-## Security Vulnerabilities
+### Elaborado con
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- The Movie Database API
+- Laragon
+- Laravel 10
+- CSS3 y variables de CSS
+- Bootstrap 5
+- JavaScript Vainilla
+- AJAX
 
-## License
+### Lo que aprendí
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Construir migraciones con `php artisan make:migration` y sus respectivos métodos `up()` y `down()`
+- Sincronizar una API con una base de datos
+- Crear comandos en Artisan
+
+### Estructura
+
+#### Controladores:
+
+- De sincronización de películas, géneros y reviews: MovieController
+- De notas/reviews: NoteController
+- Del home: DashboardController
+- De login y logout: Auth\LoginController
+- De registro: Auth\RegisterController
+
+#### Modelos
+
+- De pelicula: Movie, Genre y Review
+- De nota: Note
+- De usuario: User
+
+#### Rutas
+
+- De autenticacion: routes\auth
+- De aplicacion: routes\web
+
+#### Comando
+
+- `php artisan movies`: Commands/Movies
+
+## Autor
+
+- Luisana Mora
