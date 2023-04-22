@@ -19,8 +19,8 @@
 
             <ul class="dropdown-menu dropdown-menu-end shadow-sm">
                 <li><button class="dropdown-item d-flex align-items-center gap-2" type="button" data-bs-toggle="modal" data-bs-target="#modal">
-                    <i class="fa-solid fa-eye icon-xsm dropdown-icon"></i>
-                    <p class="m-0">View</p>
+                    <i class="fa-solid fa-xmark dropdown-icon"></i>
+                    <p class="m-0">Close</p>
                 </button></li>
                 <div id="note-options">
                 </div>
