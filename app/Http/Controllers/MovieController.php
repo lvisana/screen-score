@@ -9,8 +9,6 @@ use App\Models\Review;
 
 class MovieController extends Controller
 {
-    private static $api_key = 'be5fbc890d6dde31ba77480f1e1b9b52';
-
     public static function syncMovies($lot)
     {
 
